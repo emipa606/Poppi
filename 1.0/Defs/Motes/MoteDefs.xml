@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="MoteBase">
+    <defName>Poppi_BloodSquirt</defName>
+    <graphicData>
+      <texPath>Poppi/BloodSquirt</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.01</fadeInTime>
+      <solidTime>0.15</solidTime>
+      <fadeOutTime>0.55</fadeOutTime>
+    </mote>
+  </ThingDef>
+  <ThingDef ParentName="MoteBase">
+    <defName>Poppi_CrossStrike</defName>
+    <graphicData>
+      <texPath>Poppi/CrossStrike</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.05</fadeInTime>
+      <solidTime>0.45</solidTime>
+      <fadeOutTime>0.05</fadeOutTime>
+    </mote>
+  </ThingDef>
+</Defs>

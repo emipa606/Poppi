@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- poppi special attack -->
+  <ToolCapacityDef>
+    <defName>Poppi_Snuggle</defName>
+    <label>snuggling</label>
+  </ToolCapacityDef>
+  <ManeuverDef>
+    <defName>Poppi_Snuggle</defName>
+    <requiredCapacity>Poppi_Snuggle</requiredCapacity>
+    <verb>
+      <verbClass>Poppi.Verb_Snuggle</verbClass>
+      <meleeDamageDef>Cut</meleeDamageDef>
+    </verb>
+    <logEntryDef>MeleeAttack</logEntryDef>
+    <combatLogRulesHit>Maneuver_Scratch_MeleeHit</combatLogRulesHit>
+    <combatLogRulesDeflect>Maneuver_Scratch_MeleeDeflect</combatLogRulesDeflect>
+    <combatLogRulesMiss>Maneuver_Scratch_MeleeMiss</combatLogRulesMiss>
+    <combatLogRulesDodge>Maneuver_Scratch_MeleeDodge</combatLogRulesDodge>
+  </ManeuverDef>
+  <!-- leap as a flying object -->
+  <ThingDef ParentName="BaseBullet" Name="Poppi_FlyingObject_Leap">
+    <defName>Poppi_FlyingObject_Leap</defName>
+    <thingClass>Poppi.Poppi_FlyingObject_Leap</thingClass>
+    <label>leap</label>
+    <graphicData>
+      <texPath>Poppi/invis</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <flyOverhead>true</flyOverhead>
+      <damageDef>Stun</damageDef>
+      <damageAmountBase>6</damageAmountBase>
+      <speed>250</speed>
+    </projectile>
+  </ThingDef>
+  <!--  ======================================= Base Poppi Def =============================================-->
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>Poppi</defName>
+    <label>poppi</label>
+    <description>Deceptively harmless and impossibly cute, these little critters want nothing more than to bound into your arms and light up your life.</description>
+    <statBases>
+      <MoveSpeed>25</MoveSpeed>
+      <ComfyTemperatureMin>-45</ComfyTemperatureMin>
+      <ComfyTemperatureMax>60</ComfyTemperatureMax>
+      <MarketValue>350</MarketValue>
+      <MeatAmount>20</MeatAmount>
+      <LeatherAmount>25</LeatherAmount>
+    </statBases>
+    <tools>
+      <li>
+        <label>snuggle</label>
+        <capacities>
+          <li>Poppi_Snuggle</li>
+        </capacities>
+        <power>3</power>
+        <cooldownTime>.4</cooldownTime>
+      </li>
+    </tools>
+    <race>
+      <body>QuadrupedAnimalWithPaws</body>
+      <deathActionWorkerClass>Poppi.DeathWorker</deathActionWorkerClass>
+      <baseBodySize>0.2</baseBodySize>
+      <baseHungerRate>0.8</baseHungerRate>
+      <baseHealthScale>0.4</baseHealthScale>
+      <predator>false</predator>
+      <manhunterOnDamageChance>.05</manhunterOnDamageChance>
+      <petness>.8</petness>
+      <packAnimal>false</packAnimal>
+      <foodType>OmnivoreRoughAnimal, OmnivoreAnimal, OvivoreAnimal</foodType>
+      <executionRange>5</executionRange>
+      <wildness>0.4</wildness>
+      <mateMtbHours>4</mateMtbHours>
+      <nuzzleMtbHours>40</nuzzleMtbHours>
+      <trainability>Intermediate</trainability>
+      <canBePredatorPrey>false</canBePredatorPrey>
+      <gestationPeriodDays>3</gestationPeriodDays>
+      <leatherDef>PoppiFur</leatherDef>
+      <wildBiomes>
+        <SeaIce>0.0</SeaIce>
+        <IceSheet>0.1</IceSheet>
+        <Tundra>0.08</Tundra>
+        <BorealForest>0.2</BorealForest>
+        <TemperateForest>0.25</TemperateForest>
+        <TropicalRainforest>0.1</TropicalRainforest>
+        <AridShrubland>0.2</AridShrubland>
+        <Desert>0.3</Desert>
+        <ExtremeDesert>0.2</ExtremeDesert>
+      </wildBiomes>
+      <litterSizeCurve>
+        <points>
+          <li>(1, 0)</li>
+          <li>(1.5, 1)</li>
+          <li>(2, 2)</li>
+          <li>(2.5, 3)</li>
+          <li>(3, 2)</li>
+          <li>(3.5, 1)</li>
+          <li>(4, 0)</li>
+        </points>
+      </litterSizeCurve>
+      <lifeExpectancy>10</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.1</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.35</minAge>
+          <soundWounded>Pawn_Boomrat_Wounded</soundWounded>
+          <soundDeath>Pawn_Boomrat_Death</soundDeath>
+          <soundCall>Pawn_Boomrat_Call</soundCall>
+          <soundAngry>Pawn_Boomrat_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+    </race>
+    <comps>
+      <li Class="CompLumbering.CompProperties_Lumbering">
+        <cycledGraphic>
+          <texPath>Poppi/poppi_cycle</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1</drawSize>
+          <shadowData>
+            <volume>(0.19, 0.26, 0.19)</volume>
+          </shadowData>
+        </cycledGraphic>
+        <secondsPerStep>.2</secondsPerStep>
+        <secondsBetweenSteps>0.4</secondsBetweenSteps>
+      </li>
+      <li Class="Poppi.CompProperties_Leaper">
+        <leapRangeMax>11</leapRangeMax>
+        <leapRangeMin>3</leapRangeMin>
+        <bouncingLeaper>false</bouncingLeaper>
+        <ticksBetweenLeapChance>120</ticksBetweenLeapChance>
+        <deathOnDown>false</deathOnDown>
+        <leapChance>0.60</leapChance>
+        <textMotes>true</textMotes>
+      </li>
+      <li Class="CompProperties_Shearable">
+        <woolDef>PoppiFur</woolDef>
+        <shearIntervalDays>4</shearIntervalDays>
+        <woolAmount>20</woolAmount>
+      </li>
+      <li Class="CompProperties_Milkable">
+        <milkDef>Chemfuel</milkDef>
+        <milkIntervalDays>2</milkIntervalDays>
+        <milkAmount>5</milkAmount>
+        <milkFemaleOnly>false</milkFemaleOnly>
+      </li>
+    </comps>
+    <tradeTags>
+      <li>AnimalCommon</li>
+    </tradeTags>
+  </ThingDef>
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>Poppi</defName>
+    <label>poppi</label>
+    <race>Poppi</race>
+    <combatPower>60</combatPower>
+    <ecoSystemWeight>0.25</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Poppi/poppi</texPath>
+          <color>(255,248,210)</color>
+          <drawSize>1</drawSize>
+          <shaderType>CutoutComplex</shaderType>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Chinchilla/Dessicated_Chinchilla</texPath>
+          <drawSize>0.5</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Poppi/poppi</texPath>
+          <color>(255,248,193)</color>
+          <drawSize>1.0</drawSize>
+          <shaderType>CutoutComplex</shaderType>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Chinchilla/Dessicated_Chinchilla</texPath>
+          <drawSize>0.75</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Poppi/poppi</texPath>
+          <color>(255,248,193)</color>
+          <drawSize>1</drawSize>
+          <shaderType>CutoutComplex</shaderType>
+          <shadowData>
+            <volume>(0.21, 0.27, 0.21)</volume>
+            <offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Chinchilla/Dessicated_Chinchilla</texPath>
+          <drawSize>1</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+</Defs>
