@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- BASE -->
+  <DamageDef Name="Poppi_LocalInjuryBase" Abstract="True">
+    <workerClass>DamageWorker_AddInjury</workerClass>
+  </DamageDef>
+  <DamageDef ParentName="Poppi_LocalInjuryBase">
+    <defName>Poppi_Cleave</defName>
+    <label>Cleave</label>
+    <externalViolence>true</externalViolence>
+    <canInterruptJobs>true</canInterruptJobs>
+    <makesBlood>true</makesBlood>
+    <hasForcefulImpact>true</hasForcefulImpact>
+    <deathMessage>{0} was shredded by a flurry of claws.</deathMessage>
+    <hediff>Cut</hediff>
+    <hediffSkin>Cut</hediffSkin>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <isExplosive>false</isExplosive>
+    <impactSoundType>Slice</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+  </DamageDef>
+</Defs>
