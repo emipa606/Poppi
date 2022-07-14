@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>Poppi (Continued)</name>
   <packageId>Mlie.Poppi</packageId>
@@ -20,27 +20,31 @@
     <li>
       <packageId>jecrell.jecstools</packageId>
       <displayName>JecsTools</displayName>
-      <steamWorkshopUrl>steam://url/CommunityFilePage/2195729899</steamWorkshopUrl>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/932008009</steamWorkshopUrl>
     </li>
   </modDependencies>
   <loadAfter>
     <li>brrainz.harmony</li>
     <li>jecrell.jecstools</li>
   </loadAfter>
-  <description>[img]https://i.imgur.com/WAEzk68.png[/img]
+  <description>[img]https://i.imgur.com/buuPQel.png[/img]
 Update of Dianne (art) and Torann (code)s mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1361123804
 
-[img]https://i.imgur.com/7Gzt3Rg.png[/img]
+[img]https://i.imgur.com/pufA0kM.png[/img]
 
 [table]
     [tr]
         [td][url=https://invite.gg/Mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td]
         [td][url=https://github.com/emipa606/Poppi][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
     [/tr]
+    [tr]
+        [td][img]https://i.imgur.com/WjDSfUn.png[/img][/td]
+        [td][img]https://i.imgur.com/Be8E2qJ.png[/img][/td]
+    [/tr]
 [/table]
 	
-[img]https://i.imgur.com/NOW7jU1.png[/img]
+[img]https://i.imgur.com/Z4GOv8H.png[/img]
 1.0
 This mod adds the adorable Poppi as an animal you can find and recruit to be the lovable colony mascot!
 
@@ -50,7 +54,7 @@ Their oil can also be collected and used to create small amounts of chemfuel.
 
 Poppi are very friendly and raising a poppi farm is easy because they reproduce quickly and are easy to train.
 
-They are cousins to the boomalope and boomrat so they do explode.  However, they&apos;ve adapted and their oil doesn&apos;t start fires.  They will not explode if they are under the effects of anesthetics.
+They are cousins to the boomalope and boomrat so they do explode.  However, they've adapted and their oil doesn't start fires.  They will not explode if they are under the effects of anesthetics.
 
 They prefer love to war but if they do have to fight they are ferocious little devils with powerful legs that allow them to leap short distances.
 
@@ -58,7 +62,7 @@ Poppi can be found it most biomes due to their insulating fur, but are more like
 
 This mod requires Jecstools to be loaded before it in the load order.
 
-[img]https://i.imgur.com/Rs6T6cr.png[/img]
+[img]https://i.imgur.com/PwoNOj4.png[/img]
 [list]
 [*] See if the the error persists if you just have this mod and its requirements active.
 [*] If not, try adding your other mods until it happens again.
