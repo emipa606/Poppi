@@ -1,14 +1,14 @@
 # Poppi
 
-![Image](https://i.imgur.com/WAEzk68.png)
+![Image](https://i.imgur.com/buuPQel.png)
 
 Update of Dianne (art) and Torann (code)s mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1361123804
 
-![Image](https://i.imgur.com/7Gzt3Rg.png)
+![Image](https://i.imgur.com/pufA0kM.png)
 
 	
-![Image](https://i.imgur.com/NOW7jU1.png)
+![Image](https://i.imgur.com/Z4GOv8H.png)
 
 1.0
 This mod adds the adorable Poppi as an animal you can find and recruit to be the lovable colony mascot!
@@ -19,7 +19,7 @@ Their oil can also be collected and used to create small amounts of chemfuel.
 
 Poppi are very friendly and raising a poppi farm is easy because they reproduce quickly and are easy to train.
 
-They are cousins to the boomalope and boomrat so they do explode.  However, they&apos;ve adapted and their oil doesn&apos;t start fires.  They will not explode if they are under the effects of anesthetics.
+They are cousins to the boomalope and boomrat so they do explode.  However, they've adapted and their oil doesn't start fires.  They will not explode if they are under the effects of anesthetics.
 
 They prefer love to war but if they do have to fight they are ferocious little devils with powerful legs that allow them to leap short distances.
 
@@ -27,7 +27,7 @@ Poppi can be found it most biomes due to their insulating fur, but are more like
 
 This mod requires Jecstools to be loaded before it in the load order.
 
-![Image](https://i.imgur.com/Rs6T6cr.png)
+![Image](https://i.imgur.com/PwoNOj4.png)
 
 
 
@@ -37,6 +37,7 @@ This mod requires Jecstools to be loaded before it in the load order.
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
+
 
 
 
