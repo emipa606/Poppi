@@ -150,7 +150,7 @@ public class Poppi_FlyingObject_Leap : ThingWithComps
         }
     }
 
-    public override void Draw()
+    protected override void DrawAt(Vector3 drawLoc, bool flip = false)
     {
         if (flyingThing != null)
         {
@@ -163,7 +163,7 @@ public class Poppi_FlyingObject_Leap : ThingWithComps
 
                 if (flyingThing is Pawn thing)
                 {
-                    thing.Drawer.DrawAt(DrawPos);
+                    thing.DrawNowAt(drawLoc, flip);
                 }
             }
             else
@@ -180,13 +180,6 @@ public class Poppi_FlyingObject_Leap : ThingWithComps
         }
 
         Comps_PostDraw();
-    }
-
-    private void DrawEffects(Vector3 pawnVec, Pawn flyingPawn, int magnitude)
-    {
-        if (!pawn.Dead && !pawn.Downed)
-        {
-        }
     }
 
     private void ImpactSomething()

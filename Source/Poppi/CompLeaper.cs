@@ -154,7 +154,8 @@ public class CompLeaper : ThingComp
                     }
                 }
 
-                enumerable.GetEnumerator().MoveNext();
+                using var enumerator = enumerable.GetEnumerator();
+                enumerator.MoveNext();
             }
         }
     }
@@ -166,7 +167,7 @@ public class CompLeaper : ThingComp
             return;
         }
 
-        if (!(Pawn is { Position.IsValid: true, Spawned: true, Map: { }, Downed: false, Dead: false } &&
+        if (!(Pawn is { Position.IsValid: true, Spawned: true, Map: not null, Downed: false, Dead: false } &&
               !target.Thing.DestroyedOrNull()))
         {
             return;
@@ -197,20 +198,19 @@ public class CompLeaper : ThingComp
     private bool CanHitTargetFrom(IntVec3 pawn, LocalTargetInfo target)
     {
         return target.IsValid && target.CenterVector3.InBounds(Pawn.Map) && !target.Cell.Fogged(Pawn.Map) &&
-               target.Cell.Walkable(Pawn.Map) && TryFindShootLineFromTo(pawn, target, out _);
+               target.Cell.Walkable(Pawn.Map) && TryFindShootLineFromTo(pawn, target);
     }
 
-    private bool TryFindShootLineFromTo(IntVec3 root, LocalTargetInfo targ, out ShootLine resultingLine)
+    private bool TryFindShootLineFromTo(IntVec3 root, LocalTargetInfo targ)
     {
         bool result;
         if (targ.HasThing && targ.Thing.Map != Pawn.Map)
         {
-            resultingLine = default;
             result = false;
         }
         else
         {
-            resultingLine = new ShootLine(root, targ.Cell);
+            _ = new ShootLine(root, targ.Cell);
             result = GenSight.LineOfSightToEdges(root, targ.Cell, Pawn.Map, true);
         }
 

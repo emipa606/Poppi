@@ -1,11 +1,12 @@
 using RimWorld;
 using Verse;
+using Verse.AI.Group;
 
 namespace Poppi;
 
 public class DeathWorker : DeathActionWorker
 {
-    public override void PawnDied(Corpse corpse)
+    public override void PawnDied(Corpse corpse, Lord prevLord)
     {
         var num = 2f;
         if (corpse.InnerPawn.health.hediffSet.HasHediff(HediffDefOf.Anesthetic))

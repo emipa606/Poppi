@@ -59,7 +59,9 @@
     </tools>
     <race>
       <body>QuadrupedAnimalWithPaws</body>
-      <deathActionWorkerClass>Poppi.DeathWorker</deathActionWorkerClass>
+      <deathAction>
+        <workerClass>Poppi.DeathWorker</workerClass>
+      </deathAction>
       <baseBodySize>0.2</baseBodySize>
       <baseHungerRate>0.8</baseHungerRate>
       <baseHealthScale>0.4</baseHealthScale>
@@ -156,7 +158,7 @@
       </li>
     </comps>
     <tradeTags>
-      <li>StandardAnimal</li>
+      <li>AnimalCommon</li>
     </tradeTags>
   </ThingDef>
   <PawnKindDef ParentName="AnimalKindBase">
