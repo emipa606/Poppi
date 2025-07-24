@@ -5,7 +5,7 @@ using Verse;
 namespace Poppi;
 
 [HarmonyPatch(typeof(CompMilkable), nameof(CompMilkable.CompInspectStringExtra), null)]
-public class CompMilkable_Patch
+public class CompMilkable_CompInspectStringExtra
 {
     public static void Postfix(CompMilkable __instance, ref string __result)
     {

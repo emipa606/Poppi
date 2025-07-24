@@ -5,7 +5,7 @@ using Verse;
 namespace Poppi;
 
 [HarmonyPatch(typeof(StaggerHandler), nameof(StaggerHandler.StaggerFor))]
-public class StaggerFor_Patch
+public class StaggerHandler_StaggerFor
 {
     public static bool Prefix(Pawn ___parent)
     {

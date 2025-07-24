@@ -47,7 +47,7 @@ public class Poppi_FlyingObject_Leap : ThingWithComps
         }
     }
 
-    private IntVec3 DestinationCell => new IntVec3(destination);
+    private IntVec3 DestinationCell => new(destination);
 
     protected virtual Vector3 ExactPosition
     {
@@ -87,15 +87,15 @@ public class Poppi_FlyingObject_Leap : ThingWithComps
 
     public void Launch(Thing launcher, LocalTargetInfo targ, Thing flyingThing, DamageInfo? impactDamage)
     {
-        Launch(launcher, Position.ToVector3Shifted(), targ, flyingThing, impactDamage);
+        launch(launcher, Position.ToVector3Shifted(), targ, flyingThing, impactDamage);
     }
 
     public void Launch(Thing launcher, LocalTargetInfo targ, Thing flyingThing)
     {
-        Launch(launcher, Position.ToVector3Shifted(), targ, flyingThing);
+        launch(launcher, Position.ToVector3Shifted(), targ, flyingThing);
     }
 
-    private void Launch(Thing launcher, Vector3 origin, LocalTargetInfo targ, Thing flyingThing,
+    private void launch(Thing launcher, Vector3 origin, LocalTargetInfo targ, Thing flyingThing,
         DamageInfo? newDamageInfo = null)
     {
         var spawned = flyingThing.Spawned;
@@ -118,7 +118,7 @@ public class Poppi_FlyingObject_Leap : ThingWithComps
         Initialize();
     }
 
-    public override void Tick()
+    protected override void Tick()
     {
         base.Tick();
         ticksToImpact--;
@@ -146,7 +146,7 @@ public class Poppi_FlyingObject_Leap : ThingWithComps
                 Position = DestinationCell;
             }
 
-            ImpactSomething();
+            impactSomething();
         }
     }
 
@@ -182,7 +182,7 @@ public class Poppi_FlyingObject_Leap : ThingWithComps
         Comps_PostDraw();
     }
 
-    private void ImpactSomething()
+    private void impactSomething()
     {
         if (assignedTarget != null)
         {

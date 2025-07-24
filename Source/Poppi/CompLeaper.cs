@@ -76,9 +76,9 @@ public class CompLeaper : ThingComp
         {
             if (Rand.Chance(Props.GetLeapChance))
             {
-                if (CanHitTargetFrom(Pawn.Position, thing))
+                if (canHitTargetFrom(Pawn.Position, thing))
                 {
-                    LeapAttack(thing);
+                    leapAttack(thing);
                 }
             }
             else
@@ -142,14 +142,14 @@ public class CompLeaper : ThingComp
 
                 if (pawn != null)
                 {
-                    if (CanHitTargetFrom(Pawn.Position, thing))
+                    if (canHitTargetFrom(Pawn.Position, thing))
                     {
                         if (!pawn.Downed && !pawn.Dead)
                         {
-                            LeapAttack(pawn);
+                            leapAttack(pawn);
                         }
 
-                        LeapAttack(pawn);
+                        leapAttack(pawn);
                         break;
                     }
                 }
@@ -160,7 +160,7 @@ public class CompLeaper : ThingComp
         }
     }
 
-    private void LeapAttack(LocalTargetInfo target)
+    private void leapAttack(LocalTargetInfo target)
     {
         if (!(target != null && target.Cell != default))
         {
@@ -195,13 +195,13 @@ public class CompLeaper : ThingComp
         Scribe_Values.Look(ref initialized, "initialized", true);
     }
 
-    private bool CanHitTargetFrom(IntVec3 pawn, LocalTargetInfo target)
+    private bool canHitTargetFrom(IntVec3 pawn, LocalTargetInfo target)
     {
         return target.IsValid && target.CenterVector3.InBounds(Pawn.Map) && !target.Cell.Fogged(Pawn.Map) &&
-               target.Cell.Walkable(Pawn.Map) && TryFindShootLineFromTo(pawn, target);
+               target.Cell.Walkable(Pawn.Map) && tryFindShootLineFromTo(pawn, target);
     }
 
-    private bool TryFindShootLineFromTo(IntVec3 root, LocalTargetInfo targ)
+    private bool tryFindShootLineFromTo(IntVec3 root, LocalTargetInfo targ)
     {
         bool result;
         if (targ.HasThing && targ.Thing.Map != Pawn.Map)

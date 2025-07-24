@@ -2,5 +2,17 @@
   "Continued": true,
   "CanAdd": "0",
   "CanRemove": "2",
-  "PreviewVersion": "1.5"
+  "PreviewVersion": "1.6",
+  "Patches": false,
+  "Defs": true,
+  "Assemblies": true,
+  "LinesOfCode": 19927,
+  "LinesOfXML": 11284,
+  "CodeBaseSize": 71,
+  "LastXmlCleaning": "2025-07-24T21:46:15.6393774+02:00",
+  "SocialImageSet": true,
+  "SearchTags": [
+    " farm",
+    " animal"
+  ]
 }

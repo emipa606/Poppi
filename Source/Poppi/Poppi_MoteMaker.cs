@@ -5,26 +5,6 @@ namespace Poppi;
 
 public static class Poppi_MoteMaker
 {
-    public static void ThrowGenericMote(ThingDef moteDef, Vector3 loc, Map map, float scale, float solidTime,
-        float fadeIn, float fadeOut, int rotationRate, float velocity, float velocityAngle, float lookAngle)
-    {
-        if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
-        {
-            return;
-        }
-
-        var moteThrown = (MoteThrown)ThingMaker.MakeThing(moteDef);
-        moteThrown.Scale = 1.9f * scale;
-        moteThrown.rotationRate = rotationRate;
-        moteThrown.exactPosition = loc;
-        moteThrown.SetVelocity(velocityAngle, velocity);
-        moteThrown.exactRotation = lookAngle;
-        moteThrown.def.mote.solidTime = solidTime;
-        moteThrown.def.mote.fadeInTime = fadeIn;
-        moteThrown.def.mote.fadeOutTime = fadeOut;
-        GenSpawn.Spawn(moteThrown, loc.ToIntVec3(), map);
-    }
-
     public static void ThrowCrossStrike(Vector3 loc, Map map, float scale)
     {
         if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.Saturated)

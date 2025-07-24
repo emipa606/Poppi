@@ -46,6 +46,7 @@
       <MarketValue>350</MarketValue>
       <MeatAmount>20</MeatAmount>
       <LeatherAmount>25</LeatherAmount>
+      <Wildness>0.4</Wildness>
     </statBases>
     <tools>
       <li>
@@ -59,7 +60,9 @@
     </tools>
     <race>
       <body>QuadrupedAnimalWithPaws</body>
-      <deathActionWorkerClass>Poppi.DeathWorker</deathActionWorkerClass>
+      <deathAction>
+        <workerClass>Poppi.DeathWorker</workerClass>
+      </deathAction>
       <baseBodySize>0.2</baseBodySize>
       <baseHungerRate>0.8</baseHungerRate>
       <baseHealthScale>0.4</baseHealthScale>
@@ -69,7 +72,6 @@
       <packAnimal>false</packAnimal>
       <foodType>OmnivoreRoughAnimal, OmnivoreAnimal, OvivoreAnimal</foodType>
       <executionRange>5</executionRange>
-      <wildness>0.4</wildness>
       <mateMtbHours>4</mateMtbHours>
       <nuzzleMtbHours>40</nuzzleMtbHours>
       <trainability>Intermediate</trainability>
@@ -156,7 +158,7 @@
       </li>
     </comps>
     <tradeTags>
-      <li>StandardAnimal</li>
+      <li>AnimalCommon</li>
     </tradeTags>
   </ThingDef>
   <PawnKindDef ParentName="AnimalKindBase">
